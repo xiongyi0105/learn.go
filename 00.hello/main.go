@@ -7,5 +7,6 @@ import (
 func main() {
 	fmt.Println("你好, golang! ")
 	Pentagram()
+	AlgorithmPentagram()
 
 }
