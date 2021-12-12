@@ -14,7 +14,15 @@ func main() {
 	var ll = "熊易&ioasjfhda(8*$_@!"
 	fmt.Println(ll)
 	// runell := []rune(ll)
-	ll = strings.Map(replaceNotASCII, ll)
+	//此处使用的是匿名函数，匿名函数通过一个变量来承接函数的地址然后来调用。匿名函数没有名称
+	anonymous := func(r rune) rune {
+		if r > unicode.MaxASCII {
+			r = '?'
+		}
+		return r
+	}
+	ll = strings.Map(anonymous, ll)
+	//ll = strings.Map(replaceNotASCII, ll)
 	fmt.Println(ll)
 }
 
