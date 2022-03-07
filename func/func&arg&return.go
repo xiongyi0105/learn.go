@@ -19,21 +19,21 @@ func getReturnvalue1(input int) (int, int) {
 	return input * 2, input * 3
 }
 
-func getReturnvalue2(input int) (x1, x2 int) {
-	x1 = input * 2
+func getReturnvalue2(input int) (x, x2 int) {
+	x = input * 2
 	x2 = input * 3
 	return
 }
 
-func getReturnValueAndChangearg(input *int) (x1, x2 int) {
+func getReturnValueAndChangearg(input *int) (x, x2 int) {
 	//改变被引用量的值
 	*input = *input * 2
-	x1 = *input * 2
+	x = *input * 2
 	x2 = *input * 3
 	return
 }
 
 func PrintValue() {
-	fmt.Printf("ReturnValue is %d and %d\n", num1, num2)
+	fmt.Printf("ReturnValue is %d and %d\n", num, num2)
 	fmt.Println("Now num is:", num)
 }
